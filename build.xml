@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project default="create_run_jar" name="Create Runnable Jar for Project Shimu Project">
+<project default="jar" name="Create Runnable Jar for Project Shimu Project">
     <!--this file was created by Eclipse Runnable JAR Export Wizard-->
     <!--ANT 1.7 is required                                        -->
-    <target name="create_run_jar">
+    <target name="jar" depends="compile">
         <jar destfile="jar/ShimuGame.jar" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="vs.shimu.Main"/>
@@ -10,5 +10,14 @@
             </manifest>
             <fileset dir="bin"/>
         </jar>
+    </target>
+    <target name="compile">
+      <mkdir dir="bin"/>
+      <javac sourcepath="" srcdir="src" destdir="bin" >
+        <include name="**/*.java"/>
+        <exclude name="**/ServerLogic.java"/>
+        <exclude name="**/server/"/>
+        <exclude name="**/client/"/>
+      </javac>
     </target>
 </project>
