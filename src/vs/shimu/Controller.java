@@ -2,7 +2,7 @@ package vs.shimu;
 
 import java.awt.event.*;
 
-import vs.shimu.server.InputPackage;
+// import vs.shimu.server.InputPackage;
 
 public class Controller implements KeyListener, MouseListener,
 MouseMotionListener {
@@ -22,14 +22,14 @@ MouseMotionListener {
 		return mouse;
 	}
 
-	public InputPackage getInputPackage(){
-		return new InputPackage(keys, mouse);
-	}
+	// public InputPackage getInputPackage(){
+	// 	return new InputPackage(keys, mouse);
+	// }
 
 	/**
 	 * Converts a keyCode into that keys number in the <code>keyPressed</code>
 	 * boolean array.
-	 * 
+	 *
 	 * @param keyCode
 	 *            int of the pressed key
 	 * @return the number of the key being pressed
@@ -113,9 +113,9 @@ MouseMotionListener {
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		switch (arg0.getButton()) {
-		case MouseEvent.BUTTON1: mouse[2] = 1; 
+		case MouseEvent.BUTTON1: mouse[2] = 1;
 		break;
-		case MouseEvent.BUTTON3: mouse[3] = 1; 
+		case MouseEvent.BUTTON3: mouse[3] = 1;
 		break;
 		}
 
